@@ -1,13 +1,8 @@
-/*!
- * Start Bootstrap - Creative v3.3.7+1 (http://startbootstrap.com/template-overviews/creative)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
  .project-name{
      text-align: justify;
  }
  .text_align{
-     text-align: justify
+     text-align: justify;
  }
 .a{
     padding: 50px 0;
