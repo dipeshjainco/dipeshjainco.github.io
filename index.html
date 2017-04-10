@@ -19,8 +19,6 @@
     <!-- Custom Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet">
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link href="css/creative.min.css" rel="stylesheet">
@@ -379,7 +377,8 @@
             storageBucket: "dipeshjainco.appspot.com",
             messagingSenderId: "910016202235"
         };
-        firebase.initializeApp(config);
+        var a = firebase.initializeApp(config);
+        var Firebase = require("firebase");
     </script>
 
 
@@ -427,17 +426,28 @@
     </script>
 
     <script>
+        function authDataCallback(authData) {
+            if (authData) {
+                console.log("User " + authData.uid + " is logged in with " + authData.provider);
+            } else {
+                console.log("User is logged out");
+            }
+        }
+        // Register the callback to be fired every time auth state changes
+        var ref = new Firebase("https:dipeshjainco.firebaseio.com");
+        ref.onAuth(authDataCallback);
+
         $('#submit').click(function() {
             var emailId = $('#email').val();
             var password = $('#pwd').val();
-            firebase.auth().signInWithEmailAndPassword(emailId, password).catch(function(error) {
-                if (!error) {
-                    alert("Login");
-                } else {
-                    console.log(error.code);
-                    console.log(error.message);
-                }
+            firebase.auth().signInWithEmailAndPassword(emailId, password)
+                .then(function(firebaseUser) {
+                    console.log(password);
+                })
 
+            .catch(function(error) {
+                console.log(error.code);
+                console.log(error.message);
             });
         });
     </script>
