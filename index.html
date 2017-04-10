@@ -12,8 +12,6 @@
     <title>Dipesh Jain & Co.</title>
     <link rel="icon" href="img/djcs.png">
 
-    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.css" />
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -365,6 +363,12 @@
 
 
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-storage.js"></script>
+
     <script>
         // Initialize Firebase
         var config = {
@@ -377,13 +381,7 @@
         };
         firebase.initializeApp(config);
     </script>
-    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-messaging.js"></script>
 
-    <!-- Leave out Storage -->
-    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-storage.js"></script>
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -433,8 +431,13 @@
             var emailId = $('#email').val();
             var password = $('#pwd').val();
             firebase.auth().signInWithEmailAndPassword(emailId, password).catch(function(error) {
-                console.log(error.code);
-                console.log(error.message);
+                if (!error) {
+                    alert("Login");
+                } else {
+                    console.log(error.code);
+                    console.log(error.message);
+                }
+
             });
         });
     </script>
