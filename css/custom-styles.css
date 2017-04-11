@@ -72,6 +72,7 @@
             top: 36px;
             margin-bottom: 0px;
             border: 0px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
         }
         
         .navbar-brand {
@@ -225,28 +226,31 @@
             background-color: #000;
         }
         
-        .panel-default>.panel-heading {
-            color: #f5f5f5;
-            background-color: #083a83;
-            border-color: #ddd;
-        }
-        
-        .list-group-item {
+        .list {
             font-size: 21px;
-            letter-spacing: 6px;
+            list-style-type: square;
+            line-height: 45px;
         }
         
-        .list-group-item a {
-            color: black;
+        .card-heading {
+            background-color: #333;
+            display: flex;
+            height: 325px;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
         }
         
-        .panel {
+        .list-cards {
             margin-bottom: 0px;
+            display: flex;
             border: 0;
+            background-color: #fff;
         }
         
         .list-cards:hover:after {
-            width: 92%;
+            width: 100%;
         }
         
         .list-cards:after {
@@ -296,6 +300,15 @@
             .navbar-toggle {
                 padding: 6px 3px;
                 margin-right: 3px;
+            }
+            .card-heading {
+                height: auto;
+            }
+            .navbar-default.affix {
+                background-color: #fff;
+                border-color: rgba(34, 34, 34, .05);
+                top: 0px;
+                color: #000 !important;
             }
         }
         
