@@ -18,7 +18,7 @@
 
     <!-- Custom Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link href="css/creative.min.css" rel="stylesheet">
@@ -62,7 +62,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button id="submit" type="submit" class="btn btn-default">Submit</button>
+                    <button id="submitSignIn" type="submit" class="btn btn-default">Submit</button>
                 </div>
             </div>
 
@@ -74,14 +74,14 @@
 
             <span class="space">
                 <i class="fa fa-envelope-o  sr-contact">
-                        dipesh@dipeshjainco.in 
-                </i>
+                        <span>dipesh@dipeshjainco.in </span>
+            </i>
             </span>
 
             <span class="space">
                     <i class="fa fa-phone sr-contact"> 
-                        9769007650
-                    </i>
+                        <span>9769007650</span>
+            </i>
             </span>
 
         </div>
@@ -91,11 +91,12 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand page-scroll" href="#page-top">
-                        <img src="img/logo.png" class="img-responsive" />
-                        <span class="title"> Dipesh Jain & CO. </span><br><span class="sub-title">Company Secretaries</span> </a>
+                    <a class="navbar-brand" href="index.html">
+                        <span><img src="img/logo.png" alt=""></span>
+                        <span class="pull-right">Dipesh jain & Co. <br> Company Secretaries</span>
+                    </a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -113,8 +114,17 @@
                         <li>
                             <a class="page-scroll" href="#contact">Contact</a>
                         </li>
-                        <li>
+                        <li id="login">
                             <a data-toggle="modal" data-target="#myModal">Login</a>
+                        </li>
+
+                        <li class="dropdown" id="signOut">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="myfiles.html">My Files</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#" id="submitSignOut">Sign Out</a></li>
+                            </ul>
                         </li>
 
                     </ul>
@@ -135,12 +145,7 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                <div class="item">
-                    <img src="img/1.png" data-color="lightblue" alt="First Image">
-                    <div class="carousel-caption">
-                        <h3>First Image</h3>
-                    </div>
-                </div>
+
                 <div class="item">
                     <img src="https://unsplash.it/2000/1250?image=689" data-color="firebrick" alt="Second Image">
                     <div class="carousel-caption">
@@ -186,11 +191,12 @@
 
                 <div class="col-lg-6 d1 wow fadeIn">
                     <h2 class="section-heading text-center">Who are We</h2>
-                    <h4 class="text-center sub-heading"> Established in 2016</h4>
+
                     <hr class="primary">
 
                     <p class="text_align">
-                        Dipesh Jain & Co. is a Corporate Secretarial Services Firm offering solutions for Corporate Compliances. Dipesh Jain & Co. is registered as a Practicing Company Secretary Firm with The Institute of Company Secretaries of India
+                        Dipesh Jain & Co. <span class="sub-heading"> established in 2016 </span>is a Corporate Secretarial Services Firm offering solutions for Corporate Compliances. Dipesh Jain & Co. is registered as a Practicing Company Secretary Firm
+                        with The Institute of Company Secretaries of India
                     </p>
                     <p class="text_align">
                         The firm is dedicated to provide equal services to all the clients irrespective of the size of client’s business. Compliance has been an important part of the business since it ensures proper functioning of the business & guarantees the various stakeholders
@@ -220,7 +226,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-3 col-md-6 col-sm-6  text-center">
                     <div class="service-box">
                         <a href="services.html">
                             <i class="fa fa-3x fa-handshake-o text-primary sr-icons" aria-hidden="true"></i>
@@ -230,7 +236,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-3 col-md-6 col-sm-6 text-center">
                     <div class="service-box">
                         <a href="services.html">
                             <i class="fa fa-3x fa-plus text-primary sr-icons"></i>
@@ -240,7 +246,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-3 col-md-6 col-sm-6 text-center">
                     <div class="service-box">
                         <a href="services.html">
                             <i class="fa fa-3x fa-thumbs-up  text-primary sr-icons"></i>
@@ -249,7 +255,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-3 col-md-6 col-sm-6 text-center">
                     <div class="service-box">
                         <a href="services.html">
                             <i class="fa fa-3x fa-check text-primary sr-icons"></i>
@@ -276,14 +282,14 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 wow slideInLeft">
+                <div class="col-lg-6 col-md-6 col-sm-6 wow slideInLeft">
                     <div class="row no-gutter ">
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-4 col-md-4 ">
                             <div class="card-heading">
                                 <h3 class="text-center">Quick Links</h3>
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-8 list-cards">
+                        <div class="col-lg-8 col-md-8  list-cards">
                             <ul class="list">
                                 <li class=""><a href="http://www.icai.org.in/" target="_blank">ICAI</a> </li>
                                 <li class=""><a href="http://www.icsi.edu/" target="_blank">ICSI</a> </li>
@@ -297,14 +303,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow slideInLeft">
+                <div class="col-lg-6 col-md-6 col-sm-6 wow slideInLeft">
                     <div class="row no-gutter ">
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-4 col-md-4 ">
                             <div class="card-heading">
                                 <h3 class="text-center">Acts</h3>
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-8 list-cards">
+                        <div class="col-lg-8 col-md-8  list-cards">
                             <ul class="list">
                                 <li class=""><a href="http://www.mca.gov.in/Ministry/pdf/CompaniesAct2013.pdf" target="_blank">Companies Act, 2013</a> </li>
                                 <li class=""><a href=" http://www.mca.gov.in/Ministry/pdf/Companies_Act_1956_13jun2011.pdf" target="_blank">Companies Act, 1956</a> </li>
@@ -325,20 +331,21 @@
     <section id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-4 col-sm-4">
 
                 </div>
-                <div class="col-lg-8 text-center">
+
+                <div class="col-lg-8 col-md-8 col-sm-8 text-center">
                     <h2 class="section-heading">Let's Get In Touch!</h2>
                     <hr class="primary">
                     <p>Ready to form your company with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
                 </div>
-                <div class="col-lg-4">
+
+                <div class="col-lg-4 col-md-4 col-sm-4">
                     <img src="img/djcs_b.png" class="img-responsive center-block" width="153px" />
                 </div>
 
-
-                <div class="col-lg-3 ">
+                <div class="col-lg-3 col-md-3 col-sm-3 medium">
                     <h3>Address</h3>
                     <p>Dipesh Jain & Co</br>
                         Company Secretaries</br>
@@ -346,15 +353,15 @@
 
 
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-4 col-sm-3 medium">
                     <h3>Contact</h3>
                     <i class="fa fa-envelope sr-contact">
-                         Email Id :<h4>dipesh@dipeshjainco.in </h4>
+                         <span>Email Id :</span> <h4>dipesh@dipeshjainco.in </h4>
                     </i>
                     </br>
                     </br>
                     <i class="fa fa-phone  sr-contact"> 
-                        Mobile No: <h4>9769007650</h4>
+                        <span>Mobile No: </span> <h4>9769007650</h4>
                     </i>
 
                 </div>
@@ -362,11 +369,8 @@
         </div>
     </section>
 
-    <input id="mediaCapture" type="file">
-    <button id="submitImage" title="Add an image" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
-              
-            </button>
-    <script src="js/file.js"></script>
+
+
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-auth.js"></script>
@@ -390,6 +394,7 @@
     <script src="vendor/jquery/jquery.min.js"></script>
 
     <script src="js/firebase-helper.js"></script>
+
     <!-- jQuery -->
 
 
