@@ -15,12 +15,36 @@
             font-family: 'Alegreya Sans', sans-serif;
         }
         
+        a:hover,
+        a:focus {
+            text-decoration: none;
+        }
+        
         p {
             font-size: 18px;
         }
         
         .txt-center {
             text-align: center;
+        }
+        
+        .modal-header {
+            text-transform: uppercase;
+            background-color: #083a83;
+            color: white;
+        }
+        
+        .close {
+            color: #fff;
+        }
+        
+        label {
+            display: inline-block;
+            max-width: 100%;
+            margin-bottom: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         .sub-heading {
@@ -80,15 +104,6 @@
         
         .navbar-brand>span {
             padding: 6px;
-        }
-        
-        .title {
-            font-size: 18px;
-            line-height: 16px;
-        }
-        
-        .sub-title {
-            font-size: 16px;
         }
         
         .bg-dark,
@@ -157,17 +172,18 @@
         }
         
         #services .fa {
-            -webkit-transition: all 0.5s;
-            transition: all 0.5s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            transition-timing-function: ease;
         }
         
         i>span {
             font-family: 'Alegreya Sans', sans-serif !important;
         }
         
-        #services .fa:hover {
+        #services a:hover {
             color: #fff !important;
-            font-size: 6rem;
+            font-size: 2rem;
         }
         
         .sr-button {
