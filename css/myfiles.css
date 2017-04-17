@@ -1,3 +1,13 @@
+.navbar {
+    background: #023663;
+}
+
+.navbar-default .nav>li.active>a,
+.navbar-default .nav>li.active>a:focus {
+    color: #083a83!important;
+    background-color: #fff !important;
+}
+
 .intro-header {
     background-color: #777777;
     background: no-repeat center center;
@@ -87,6 +97,17 @@
     font-size: 21px;
     padding: 0 72px;
     margin-bottom: 15px;
+    width: 270px;
+}
+
+.selectbtn {
+    border-radius: 0px;
+    height: 36px;
+    font-size: 18px;
+    color: #023663;
+    margin-bottom: 15px;
+    display: none;
+    width: 270px;
 }
 
 .btn.focus,
@@ -102,8 +123,18 @@ input[type="file"] {
     visibility: hidden;
 }
 
-.list-group-item {
+.list-group-item a {
+    font-size: 16px;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    margin: 0 3px;
+}
+
+.list-group-item .fa {
+    color: black;
+}
+
+.list-group-item p {
+    font-size: 18px;
+    text-transform: capitalize;
     font-weight: 600;
 }

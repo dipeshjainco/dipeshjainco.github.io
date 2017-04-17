@@ -1,3 +1,13 @@
+.navbar {
+    background: #023663;
+}
+
+.navbar-default .nav>li.active>a,
+.navbar-default .nav>li.active>a:focus {
+    color: #083a83!important;
+    background-color: #fff;
+}
+
 ul {
     list-style: square;
     text-align: left;

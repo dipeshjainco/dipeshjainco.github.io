@@ -108,7 +108,7 @@
                             <a class="page-scroll" href="index.html">About</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#services-p">Services</a>
+                            <a class="page-scroll" href="services.html">Services</a>
                         </li>
                         <li>
                             <a class="page-scroll" href="index.html">Knowledge Center</a>
@@ -138,43 +138,44 @@
     </header>
 
 
-    <header class="intro-header" style="background-image: url('img/2.jpg')">
-        <div class="container">
+
+    <section>
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Account </h1>
-                        <hr class="small">
-                        <span class="subheading"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <div class="container-fluid">
-        <div class="add-section">
+                <div class="col-lg-4 col-md-4">
 
-            <input id="mediaCapture" type="file">
+                    <div class="add-section">
 
-            <select name="usersFiles" id="adminSelect">
+                        <input id="mediaCapture" type="file">
+
+                        <select name="usersFiles" id="adminSelect" class="selectbtn center-block">
                     
-            </select>
+                        </select>
 
-            <button id="submitImage" title="Add a File" class="btn filebtn center-block">Upload file</button>
+                        <button id="submitImage" title="Add a File" class="btn filebtn center-block">Upload file</button>
 
-            <select name="users" id="userSelect">
-                    <option value="all">All</option>
-            </select>
 
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8 col-md-8">
+                    <select name="users" id="userSelect" class="selectbtn">
+                            <option value="all">Select Client</option>
+                        </select>
+                    <div class="pre-scrollable" id="style-5">
+                        <div class="display-section list-group" id="filetable">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
-        <div class="display-section list-group" id="filetable">
-
-
-        </div>
-
-    </div>
+    </section>
 
     <section id="contact">
         <div class="container">
@@ -242,7 +243,7 @@
     <script src="vendor/jquery/jquery.min.js"></script>
 
     <script src="js/firebase-helper.js"></script>
-    <script src="js/file.js"></script>
+
     <!-- jQuery -->
 
 

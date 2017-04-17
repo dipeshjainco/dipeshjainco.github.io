@@ -5,6 +5,10 @@ this.databaseRef = firebase.database().ref();
 var adminFlag = "false";
 var adminSelectUid;
 
+window.onbeforeunload = function(e) {
+    signOut();
+};
+
 function deleteFile(key, uid) {
     console.log("Deleting");
     firebase.database().ref("files/" + uid + "/").child(key).remove();
@@ -44,7 +48,7 @@ function getFiles(uid) {
             var childKey = childSnapshot.key;
             var childData = childSnapshot.val();
             if (childKey) {
-                $('#filetable').append('<li class="list-group-item">' + childData.fileName + '<br><a href="' + childData.downloadUrl + '" target="_blank">View</a> <a href="' + childData.downloadUrl + '" download>download</a> <a href="#" onClick="deleteFile(\'' + childKey + '\',\'' + uid + '\')">delete</a></li>');
+                $('#filetable').append('<li class="list-group-item"> <p>' + childData.fileName + '</p><a href="' + childData.downloadUrl + '" target="_blank">View <i class="fa fa-eye"></i></a> <a href="' + childData.downloadUrl + '" download>Download <i class="fa fa-download "></i></a> <a href="#" onClick="deleteFile(\'' + childKey + '\',\'' + uid + '\')">delete <i class="fa fa-trash"></i></a></li>');
             }
         });
     });
@@ -72,6 +76,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 var adminKey = childSnapshot.key;
                 if (adminKey == uid) {
                     adminFlag = true;
+                    $(".selectbtn").css("display", "block");
                     userRef = firebase.database().ref("users/");
                     userRef.once('value', function(snapshot) {
                         snapshot.forEach(function(childSnapshot) {
