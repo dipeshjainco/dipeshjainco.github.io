@@ -5,9 +5,35 @@ this.databaseRef = firebase.database().ref();
 var adminFlag = "false";
 var adminSelectUid;
 
-window.onbeforeunload = function(e) {
-    signOut();
-};
+var idleTime = 0;
+$(document).ready(function() {
+
+    if (sessionStorage.loginFlag == null) {
+        signOut();
+    }
+    //Increment the idle time counter every minute.
+    if (getCurrentuser) {
+        var idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+    }
+
+    //Zero the idle timer on mouse movement.
+    $(this).mousemove(function(e) {
+        idleTime = 0;
+    });
+    $(this).keypress(function(e) {
+        idleTime = 0;
+    });
+});
+
+function timerIncrement() {
+    idleTime = idleTime + 1;
+    console.log(idleTime);
+    if (idleTime >= 3) { // 3 minutes
+        signOut();
+    }
+
+}
+
 
 function deleteFile(key, uid) {
     console.log("Deleting");
@@ -58,7 +84,6 @@ function getFiles(uid) {
 
 
 firebase.auth().onAuthStateChanged(function(user) {
-
     if (user) {
         $('#myModal').modal('hide');
         $("#login").css("display", "none");
@@ -76,6 +101,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 var adminKey = childSnapshot.key;
                 if (adminKey == uid) {
                     adminFlag = true;
+                    adminSelectUid = uid;
                     $(".selectbtn").css("display", "block");
                     userRef = firebase.database().ref("users/");
                     userRef.once('value', function(snapshot) {
@@ -96,10 +122,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
         });
 
-        console.log(email + " User Logged In");
-
     } else {
-        console.log("Logged Out");
+        console.log("No Users");
         $("#signOut").css("display", "none");
         $("#login").css("display", "inline");
 
@@ -129,6 +153,10 @@ $('#submitSignIn').click(function() {
     firebase.auth().signInWithEmailAndPassword(emailId, password)
         .then(function(firebaseUser) {
             alert("Logged In Successfully");
+            if (typeof(Storage) !== "undefined") {
+                sessionStorage.loginFlag = true;
+
+            }
             user = getCurrentuser();
             if (user) {
                 var usersRef = firebase.database().ref("users/" + user.uid);
@@ -153,13 +181,14 @@ function FriendlyChat() {
     this.storageRef = firebase.storage().ref();
     this.databaseRef = firebase.database().ref();
 
-
+    if (this.submitImageButton) {
+        this.submitImageButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.mediaCapture.click();
+        }.bind(this));
+        this.mediaCapture.addEventListener('change', this.saveImageMessage.bind(this));
+    }
     // Events for image upload.
-    this.submitImageButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.mediaCapture.click();
-    }.bind(this));
-    this.mediaCapture.addEventListener('change', this.saveImageMessage.bind(this));
 
 
 }
@@ -192,7 +221,7 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
     var user = firebase.auth().currentUser;
 
 
-    if (adminFlag) {
+    if (adminFlag == "true") {
         storeFile(adminSelectUid);
     } else {
         storeFile(user.uid);
@@ -201,7 +230,9 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
     function storeFile(uid) {
         this.storageRef.child("client/" + user.uid + "/" + filePath).put(file)
             .then(function(snapshot) {
-                console.log('Uploaded a blob or file!', snapshot);
+                alert("Uploaded a file!");
+                console.log("UserUidStorage" + user.uid);
+                console.log("UserUidDatabase" + uid);
                 dataRef.child("files").child(uid).push({
                     fileName: snapshot.metadata.name,
                     path: snapshot.metadata.fullPath,
@@ -211,7 +242,7 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
                 location.reload();
             }).catch(function(error) {
                 console.log(error.code);
-                alert(error.message);
+                console.log(error.message);
             });
 
     }
@@ -235,4 +266,5 @@ FriendlyChat.prototype.checkSetup = function() {
 
 window.onload = function() {
     window.friendlyChat = new FriendlyChat();
+
 };

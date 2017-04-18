@@ -121,6 +121,14 @@ carousel h3 {
     border-top-right-radius: 10px;
 }
 
+.full-screen {
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .navbar {
     color: #023663;
     top: 36px;
@@ -166,12 +174,16 @@ carousel h3 {
     color: #fff;
 }
 
+#contact {
+    padding: 12px 0;
+}
+
 #contact hr {
     border-color: #fff;
+    margin: 3px auto;
 }
 
 h4 {
-    font-weight: 600;
     text-align: center;
     letter-spacing: 3px;
 }
@@ -233,6 +245,7 @@ hr {
 
 i>span {
     font-family: 'Alegreya Sans', sans-serif !important;
+    font-size: 18px;
 }
 
 #services a:hover {
@@ -257,7 +270,7 @@ i>span {
 }
 
 .card-heading {
-    background-color: #333;
+    background-color: #083a83;
     display: flex;
     height: 325px;
     justify-content: center;
