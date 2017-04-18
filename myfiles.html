@@ -81,9 +81,10 @@
             </span>
 
             <span class="space">
-                    <i class="fa fa-phone sr-contact"> 
-                        <span>9769007650</span>
-            </i>
+                    <i class="fa fa-mobile sr-contact"> </i>
+          <span> 9769007650</span>
+            <i class="fa fa-whatsapp sr-contact"></i>
+
             </span>
 
         </div>
@@ -120,13 +121,11 @@
                             <a data-toggle="modal" data-target="#myModal">Login</a>
                         </li>
 
-                        <li class="dropdown" id="signOut">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="myfiles.html">My Files</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#" id="submitSignOut">Sign Out</a></li>
-                            </ul>
+                        <li id="myfiles">
+                            <a href="myfiles.html">My Files</a>
+                        </li>
+                        <li id="signOut">
+                            <a href="#" id="submitSignOut">Sign Out</a>
                         </li>
 
                     </ul>
@@ -140,12 +139,14 @@
 
 
     <section id="file">
-        <div class="container">
+        <div class="container no-padding">
             <div class="row">
                 <div class="col-lg-4 col-md-4">
                     <div class="add-section">
                         <input id="mediaCapture" type="file">
+                        <label id="texthint">Select User to which you need to add file.</label>
                         <select name="usersFiles" id="adminSelect" class="selectbtn center-block">
+                            
                         </select>
                         <button id="submitImage" title="Add a File" class="btn filebtn center-block">Upload file</button>
                     </div>
@@ -153,7 +154,7 @@
 
                 <div class="col-lg-8 col-md-8">
                     <select name="users" id="userSelect" class="selectbtn">
-                            <option value="all">Select Client</option>
+                            <option value="all">View User Files</option>
                         </select>
                     <div class="pre-scrollable" id="style-5">
                         <div class="display-section list-group" id="filetable">
@@ -199,8 +200,10 @@
                     </i>
                     </br>
                     </br>
-                    <i class="fa fa-phone  sr-contact"> 
-                        <span>Mobile No: </span> <h4>9769007650</h4>
+                    <i class="fa fa-2x fa-whatsapp sr-contact">
+                        <i class="fa fa-phone sr-contact"></i>
+                    <span>Mobile No:</span>
+                    <h4>9769007650</h4>
                     </i>
 
                 </div>

@@ -8,11 +8,18 @@ var adminSelectUid;
 var idleTime = 0;
 $(document).ready(function() {
 
+    if (getCurrentuser()) {
+        console.log(getCurrentuser);
+        $("#login").css("display", "none");
+        $("#myfiles").css("display", "inline");
+        $("#signOut").css("display", "inline");
+    }
+
     if (sessionStorage.loginFlag == null) {
         signOut();
     }
     //Increment the idle time counter every minute.
-    if (getCurrentuser) {
+    if (getCurrentuser()) {
         var idleInterval = setInterval(timerIncrement, 60000); // 1 minute
     }
 
@@ -87,6 +94,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         $('#myModal').modal('hide');
         $("#login").css("display", "none");
+        $("#myfiles").css("display", "inline");
         $("#signOut").css("display", "inline");
         var user = getCurrentuser();
         var name, email, uid;
@@ -102,6 +110,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 if (adminKey == uid) {
                     adminFlag = true;
                     adminSelectUid = uid;
+                    $("#texthint").show();
                     $(".selectbtn").css("display", "block");
                     userRef = firebase.database().ref("users/");
                     userRef.once('value', function(snapshot) {
@@ -125,6 +134,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     } else {
         console.log("No Users");
+        $("#myfiles").css("display", "none");
         $("#signOut").css("display", "none");
         $("#login").css("display", "inline");
 

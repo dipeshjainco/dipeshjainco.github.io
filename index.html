@@ -79,9 +79,10 @@
             </span>
 
             <span class="space">
-                    <i class="fa fa-phone sr-contact"> 
-                        <span>9769007650</span>
-            </i>
+                    <i class="fa fa-mobile-phone sr-contact"> </i>
+          <span> 9769007650</span>
+            <i class="fa fa-whatsapp sr-contact"></i>
+
             </span>
 
         </div>
@@ -118,13 +119,11 @@
                             <a data-toggle="modal" data-target="#myModal">Login</a>
                         </li>
 
-                        <li class="dropdown" id="signOut">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="myfiles.html">My Files</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#" id="submitSignOut">Sign Out</a></li>
-                            </ul>
+                        <li id="myfiles">
+                            <a href="myfiles.html">My Files</a>
+                        </li>
+                        <li id="signOut">
+                            <a href="#" id="submitSignOut">Sign Out</a>
                         </li>
 
                     </ul>
@@ -133,7 +132,7 @@
             </div>
             <!-- /.container-fluid -->
         </nav>
-        <div id="mycarousel" class="carousel slide" data-ride="carousel">
+        <div id="mycarousel" class="carousel slide carousel-fade main-carousel" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
@@ -155,25 +154,25 @@
                 <div class="item">
                     <img src="img/2.jpg" data-color="violet" alt="Big Journeys Begin With Small Steps">
                     <div class="carousel-caption text2">
-                        <h3>Big Journeys Begin With Small Steps</h3>
+                        <h3>Big journeys begin with small steps.</h3>
                     </div>
                 </div>
                 <div class="item">
                     <img src="img/3.jpg" data-color="lightgreen" alt="It takes nothing to join the crowd. It takes everything to stand alone">
                     <div class="carousel-caption text3">
-                        <h3>It takes nothing to join the crowd. </br>It takes everything to stand alone</h3>
+                        <h3>It takes nothing to join the crowd. </br>It takes everything to stand alone.</h3>
                     </div>
                 </div>
                 <div class="item">
                     <img src="img/4.jpg" data-color="tomato" alt="It doesnt matter how slow you go as long as you dont stop">
                     <div class="carousel-caption text4">
-                        <h3>It doesnt matter how slow you go as long as you dont stop</h3>
+                        <h3>It doesn't matter how slow you go as long as you don't stop.</h3>
                     </div>
                 </div>
                 <div class="item">
                     <img src="img/5.jpg" data-color="tomato" alt="Grow your business the right way">
                     <div class="carousel-caption text5">
-                        <h3>Grow your business </br>the right way</h3>
+                        <h3>Grow your business </br> the right way.</h3>
                     </div>
                 </div>
             </div>
@@ -210,15 +209,28 @@
 
                 </div>
                 <div class="col-lg-6 no-padding wow slideInRight">
-                    <img class="img-responsive" src="img/Welcome.jpg" />
+                    <div id="mycarousel2" class="carousel slide carousel-fade about-carousel" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#mycarousel2" data-slide-to="0" class="active"></li>
+                            <li data-target="#mycarousel2" data-slide-to="1"></li>
 
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img class="img-responsive " src="img/Welcome.jpg">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="img/Startups.jpg">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-
-
     </section>
+
     <section id="services">
         <div class="container-fluid">
             <div class="container">
@@ -238,8 +250,6 @@
                             <i class="fa fa-3x fa-handshake-o text-primary sr-icons" aria-hidden="true"></i>
                             <h3>Incorporation Advisory</h3>
                         </a>
-
-
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 text-center">
@@ -277,6 +287,7 @@
             </div>
         </div>
     </section>
+
     <section id="knowledge_center">
         <div class="container">
             <div class="row">
@@ -308,23 +319,37 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 wow slideInRight">
+                <div class="col-lg-6 col-md-6 col-sm-6 wow slideInLeft">
                     <div class="row no-gutter ">
                         <div class="col-lg-4 col-md-4 ">
                             <div class="card-heading">
-                                <h3 class="text-center">Acts</h3>
+                                <h3 class="text-center">Quick Links</h3>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-8  list-cards">
                             <ul class="list">
-                                <li class=""><a href="http://www.mca.gov.in/Ministry/pdf/CompaniesAct2013.pdf" target="_blank">Companies Act, 2013</a> </li>
-                                <li class=""><a href=" http://www.mca.gov.in/Ministry/pdf/Companies_Act_1956_13jun2011.pdf" target="_blank">Companies Act, 1956</a> </li>
-                                <li class=""><a href=" http://www.mca.gov.in/Ministry/actsbills/pdf/LLP_Act_2008_15jan2009.pdf" target="_blank">LLP Act, 2008</a> </li>
-                                <li class=""><a href="http://www.mca.gov.in/Ministry/pdf/TheInsolvencyandBankruptcyofIndia.pdf" target="_blank">Insolvency And Bankruptcy Code, 2016</a> </li>
+                                <li class="">
+                                    <a href="http://www.mca.gov.in/Ministry/pdf/CompaniesAct2013.pdf" target="_blank">Companies Act, 2013</a>
+                                </li>
+                                <li class="">
+                                    <a href=" http://www.mca.gov.in/Ministry/pdf/Companies_Act_1956_13jun2011.pdf" target="_blank">Companies Act, 1956</a>
+                                </li>
+                                <li class="">
+                                    <a href=" http://www.mca.gov.in/Ministry/actsbills/pdf/LLP_Act_2008_15jan2009.pdf" target="_blank">LLP Act, 2008</a>
+                                </li>
+                                <li class="">
+                                    <a href="http://www.mca.gov.in/Ministry/pdf/TheInsolvencyandBankruptcyofIndia.pdf" target="_blank">Insolvency And Bankruptcy Code, 2016</a>
+                                </li>
 
-                                <li class=""><a href="http://www.mca.gov.in/Ministry/actsbills/pdf/The_Companies_Secretaries_Amendment_Act_2006.pdf" target="_blank">Company Secretaries Act, 1980</a> </li>
-                                <li class=""><a href="http://www.mca.gov.in/Ministry/pdf/CA_AmendmentAct_2011_07092016.pdf" target="_blank">Chartered Accountants Act, 1949 </a> </li>
-                                <li class=""><a href="http://www.mca.gov.in/Ministry/actsbills/pdf/Cost_and_works_Accountants_Act_1959.pdf" target="_blank">Cost And Works Accountants Act, 1959</a> </li>
+                                <li class="">
+                                    <a href="http://www.mca.gov.in/Ministry/actsbills/pdf/The_Companies_Secretaries_Amendment_Act_2006.pdf" target="_blank">Company Secretaries Act, 1980</a>
+                                </li>
+                                <li class="">
+                                    <a href="http://www.mca.gov.in/Ministry/pdf/CA_AmendmentAct_2011_07092016.pdf" target="_blank">Chartered Accountants Act, 1949 </a>
+                                </li>
+                                <li class="">
+                                    <a href="http://www.mca.gov.in/Ministry/actsbills/pdf/Cost_and_works_Accountants_Act_1959.pdf" target="_blank">Cost And Works Accountants Act, 1959</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -365,16 +390,16 @@
                     </i>
                     </br>
                     </br>
-                    <i class="fa fa-phone  sr-contact"> 
-                        <span>Mobile No: </span> <h4>9769007650</h4>
-                    </i>
 
+                    <i class="fa fa-2x fa-whatsapp sr-contact">
+                        <i class="fa fa-phone sr-contact"></i>
+                    <span>Mobile No:</span>
+                    <h4>9769007650</h4>
+                    </i>
                 </div>
             </div>
         </div>
     </section>
-
-
 
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-app.js"></script>
@@ -396,15 +421,14 @@
         firebase.initializeApp(config);
     </script>
 
-    <script src="vendor/jquery/jquery.min.js"></script>
-
-    <script src="js/firebase-helper.js"></script>
-
     <!-- jQuery -->
-
+    <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="js/firebase-helper.js"></script>
+
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
@@ -416,13 +440,13 @@
     <script>
         new WOW().init();
 
-        var $item = $('.carousel .item');
+        var $item = $('.main-carousel .item');
         var $wHeight = $(window).height();
         $item.eq(0).addClass('active');
         $item.height($wHeight);
         $item.addClass('full-screen');
 
-        $('.carousel img').each(function() {
+        $('.main-carousel img').each(function() {
             var $src = $(this).attr('src');
             var $color = $(this).attr('data-color');
             $(this).parent().css({
@@ -437,11 +461,16 @@
             $item.height($wHeight);
         });
 
-        $('.carousel').carousel({
+        $('.main-carousel').carousel({
             interval: 6000,
-            //pause: "false"
+            pause: "false"
+        });
+        $('.about-carousel').carousel({
+            interval: 3600,
+            pause: "false"
         });
     </script>
+
 
 </body>
 

@@ -14,7 +14,7 @@
     -o-background-size: cover;
 }
 
-.intro-header .site-heading,
+/ .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
     padding: 100px 0 50px;
@@ -98,22 +98,28 @@
     background-color: #083a83;
     color: #fff;
     font-size: 21px;
-    padding: 0 72px;
-    margin-bottom: 15px;
-    width: 270px;
+    margin-bottom: 18px;
+    width: 100%;
     display: flex;
-    align-content: center;
     justify-content: center;
+}
+
+#texthint {
+    display: none;
+}
+
+#file {
+    padding: 45px 0;
 }
 
 .selectbtn {
     border-radius: 0px;
-    height: 36px;
-    font-size: 18px;
+    height: 45px;
+    font-size: 21px;
     color: #023663;
-    margin-bottom: 15px;
+    margin-bottom: 27px;
     display: none;
-    width: 270px;
+    width: 100%;
 }
 
 .btn.focus,
