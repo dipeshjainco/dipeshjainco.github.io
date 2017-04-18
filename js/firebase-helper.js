@@ -115,6 +115,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         });
                     });
                 } else {
+                    console.log("Non admin")
                     getFiles(uid);
                 }
 
@@ -137,7 +138,7 @@ function getCurrentuser() {
 
 function signOut() {
     firebase.auth().signOut().then(function() {
-        //window.location = 'index.html';
+
     }, function(error) {
         console.error('Sign Out Error', error);
     });
@@ -145,6 +146,7 @@ function signOut() {
 
 $('#submitSignOut').click(function() {
     signOut();
+    window.location = 'index.html';
 });
 
 $('#submitSignIn').click(function() {
@@ -221,7 +223,7 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
     var user = firebase.auth().currentUser;
 
 
-    if (adminFlag == "true") {
+    if (adminFlag == true) {
         storeFile(adminSelectUid);
     } else {
         storeFile(user.uid);
@@ -231,8 +233,6 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
         this.storageRef.child("client/" + user.uid + "/" + filePath).put(file)
             .then(function(snapshot) {
                 alert("Uploaded a file!");
-                console.log("UserUidStorage" + user.uid);
-                console.log("UserUidDatabase" + uid);
                 dataRef.child("files").child(uid).push({
                     fileName: snapshot.metadata.name,
                     path: snapshot.metadata.fullPath,
