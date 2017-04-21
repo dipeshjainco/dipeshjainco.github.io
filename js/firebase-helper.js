@@ -240,6 +240,7 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
     }
 
     function storeFile(uid) {
+        $("#progress-part").css('display', 'block');
         this.storageRef.child("client/" + user.uid + "/" + filePath).put(file)
             .then(function(snapshot) {
                 alert("Uploaded a file!");
@@ -249,10 +250,11 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
                     size: snapshot.metadata.size,
                     downloadUrl: snapshot.downloadURL
                 })
+
                 location.reload();
             }).catch(function(error) {
                 console.log(error.code);
-                console.log(error.message);
+                alert.log(error.message);
             });
 
     }

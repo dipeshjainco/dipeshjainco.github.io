@@ -150,3 +150,11 @@ input[type="file"] {
     text-transform: capitalize;
     font-weight: 600;
 }
+
+#progress-part {
+    display: none;
+}
+
+.progress-bar {
+    background-color: #023663;
+}
