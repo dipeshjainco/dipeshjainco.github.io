@@ -55,12 +55,20 @@ a:focus {
     text-decoration: none;
 }
 
+a:visited {
+    border: none;
+}
+
 p {
     font-size: 18px;
 }
 
 .txt-center {
     text-align: center;
+}
+
+#login {
+    cursor: pointer;
 }
 
 .modal-header {
@@ -95,7 +103,6 @@ label {
 }
 
 .fa-flip-horizontal {
-    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=118deg, mirror=1)";
     -webkit-transform: rotate(118deg)scale(-1, 1);
     -ms-transform: rotate(118deg)scale(-1, 1);
     transform: rotate(118deg)scale(-1, 1);

@@ -14,7 +14,7 @@
     -o-background-size: cover;
 }
 
-/ .intro-header .site-heading,
+.intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
     padding: 100px 0 50px;
@@ -28,7 +28,7 @@
         padding: 150px 0;
     }
     .navbar {
-        background: #333;
+        background: #777;
     }
 }
 
@@ -137,7 +137,7 @@ input[type="file"] {
 
 .list-group-item a {
     font-size: 16px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin: 0 3px;
 }
 
