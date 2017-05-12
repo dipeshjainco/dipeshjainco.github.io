@@ -34,7 +34,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body {
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Lora', serif;
     background-color: #f5f5f5;
 }
 
@@ -47,7 +47,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Lora', serif;
 }
 
 a:hover,
@@ -218,7 +218,6 @@ carousel h3 {
     top: 36px;
     margin-bottom: 0px;
     border: 0px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
 .navbar-default .nav>li>a,
@@ -328,7 +327,7 @@ hr {
 }
 
 i>span {
-    font-family: 'Alegreya Sans', sans-serif !important;
+    font-family: 'Lora', serif !important;
     font-size: 18px;
 }
 
@@ -508,4 +507,8 @@ input[type="file"] {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
+}
+
+h4 {
+    text-align: left;
 }
