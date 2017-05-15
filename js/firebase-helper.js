@@ -216,10 +216,10 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
     // Clear the selection in the file picker input.
 
 
-    // Check if the file is an image.
-    if (!file.type.match('application/pdf')) {
+    // Check if the file
+    if (!file.type.match('application/*')) {
         var data = {
-            message: 'You can only add pdf',
+            message: 'Please select valid file',
             timeout: 2000
         };
         alert(data.message);
