@@ -217,14 +217,14 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
 
 
     // Check if the file
-    if (!file.type.match('application/*')) {
+    /*if (!file.type.match('application/*')) {
         var data = {
             message: 'Please select valid file',
             timeout: 2000
         };
         alert(data.message);
         return;
-    }
+    }*/
 
 
     // Upload the image to Cloud Storage.
