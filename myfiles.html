@@ -19,6 +19,7 @@
     <!-- Custom Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link href="css/creative.min.css" rel="stylesheet">
@@ -143,32 +144,51 @@
     <section id="file">
         <div class="container no-padding">
             <div class="row">
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-3 col-md-3">
                     <div class="add-section">
+
+                        <div class="users-block" data-toggle="tooltip" title="Hooray!">
+                            <label id="texthint">Select User to which you need to add file.</label>
+                            <select name="usersFiles" id="adminSelect" class="selectbtn center-block">
+                            </select>
+                        </div>
+
+
+                        <div class="folder-block">
+                            <label id="folder-name-hint">Select the folder in which you need to add file</label>
+                            <select name="usersFolders" id="folderSelect" class="select-folder center-block">  
+                            </select>
+                            <input type="text" placeholder="New Folder Name" id="txtFolderName" />
+                        </div>
+
                         <input id="mediaCapture" type="file">
-                        <label id="texthint">Select User to which you need to add file.</label>
-                        <select name="usersFiles" id="adminSelect" class="selectbtn center-block">
-                            
-                        </select>
                         <button id="submitImage" title="Add a File" class="btn filebtn center-block">Upload file</button>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8">
-                    <div id="progress-part" class="progress">
-                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%">Loading...
+                <div class="col-lg-7 col-md-7 col-lg-offset-1 col-lg-offset-1">
+                    <div class="jumbotron">
+                        <h3>List of Files</h3>
+                        <div id="progress-part" class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%">Loading...
+                            </div>
                         </div>
-                    </div>
-                    <select name="users" id="userSelect" class="selectbtn">
+                        <select name="users" id="userSelect" class="selectbtn">
                             <option value="all">View User Files</option>
                         </select>
-                    <div class="pre-scrollable" id="style-5">
-                        <div class="display-section list-group" id="filetable">
+                        <div class="pre-scrollable" id="style-5">
+                            <div class="display-section list-group">
+                                <div class="panel-group filetable" id="accordion" role="tablist" aria-multiselectable="true">
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
 
+
             </div>
+
+        </div>
 
         </div>
     </section>

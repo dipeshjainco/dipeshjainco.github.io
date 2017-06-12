@@ -1,0 +1,32 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": false,
+      
+    // admins
+    "admins": {
+      ".read": false,
+    	".write": false
+    },
+  	
+    // files
+    "files": {
+      ".read": false,
+    	".write": false,
+			"$uid": {
+        // only admins and uploader will have read/write access
+        ".read": "(root.child('admins').hasChild(auth.uid)) || (auth != null && auth.uid != null && auth.uid == $uid)",
+				".write": "(root.child('admins').hasChild(auth.uid)) || (auth != null && auth.uid != null && auth.uid == $uid)"
+      }
+    },
+
+    // all users who can login
+    "users": {
+      "$uid": {
+        // only admins and uploader will have read/write access
+        ".read": "(root.child('admins').hasChild(auth.uid)) || (auth != null && auth.uid != null && auth.uid == $uid)",
+				".write": "(root.child('admins').hasChild(auth.uid)) || (auth != null && auth.uid != null && auth.uid == $uid)"
+      }
+    }
+  }
+}
